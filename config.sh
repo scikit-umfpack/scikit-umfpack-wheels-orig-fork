@@ -11,7 +11,7 @@ source gfortran-install/gfortran_utils.sh
 
 function pre_build {
     # Install the build dependencies
-    yum install -y suitesparse-devel
+    yum install -y suitesparse-devel swig
 }
 
 function build_wheel {
