@@ -66,10 +66,6 @@ function run_tests {
     else
         local testmode="fast"
     fi
-    # Check bundled license file
-    python ../check_license.py
-    # Run tests
-    python ../run_scipy_tests.py $testmode -- -n2 -rfEX
-    # Show BLAS / LAPACK used
-    python -c 'import scipy; scipy.show_config()'
+    # Run nose tests
+    python -c 'nosetests -v scikits.umfpack'
 }
