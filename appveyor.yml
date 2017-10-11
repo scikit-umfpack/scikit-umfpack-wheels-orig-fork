@@ -11,6 +11,8 @@ max_jobs: 100
 
 cache:
   - '%LOCALAPPDATA%\pip\Cache'
+  - 'C:\Tools\vcpkg\installed'
+  - 'C:\Tools\vcpkg\packages'
 
 environment:
   global:
@@ -87,11 +89,17 @@ init:
       }
 
 install:
+  - cd C:\fake-directory
+  # Get needed submodules
+  - git submodule update --init --recursive
+
   - cmd: echo "Filesystem root:"
   - dir C:\
 
   - echo "Installed SDKs:"
   - dir "C:/Program Files/Microsoft SDKs/Windows"
+  
+  - vcpkg install suitesparse:x64-windows
 
   # Prepend newly installed Python to the PATH of this build (this cannot be
   # done from inside the powershell script as it would require to restart
@@ -103,9 +111,6 @@ install:
   - >-
      python -c "import sys,platform,struct;
      print(sys.platform, platform.machine(), struct.calcsize('P') * 8, )"
-
-  # Get needed submodules
-  - git submodule update --init scipy numpy-distutils
 
   # Download and install static "openblas.a" to PYTHON\lib
   - ps: |
@@ -163,10 +168,7 @@ install:
       mv numpy-distutils\numpy\compat $NumpyDir
 
 build_script:
-  - cd scipy
-  - git checkout %BUILD_COMMIT%
-  # Append license text relevant for the built wheel
-  - type ..\LICENSE_win32.txt >> LICENSE.txt
+  - cd scikit-umfpack
   # Copy over additional DLLs to bundle to the wheels
   #
   # The find commands below are mainly to find the paths where the libraries are.
