@@ -67,5 +67,5 @@ function run_tests {
         local testmode="fast"
     fi
     # Run nose tests
-    nosetests -v scikits.umfpack
+    py.test
 }
