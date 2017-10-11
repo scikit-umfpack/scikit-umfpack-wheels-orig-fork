@@ -9,6 +9,11 @@ OPENBLAS_VERSION=0.2.18
 
 source gfortran-install/gfortran_utils.sh
 
+function pre_build {
+    # Install the build dependencies
+    yum install -y suitesparse-devel
+}
+
 function build_wheel {
     if [ -z "$IS_OSX" ]; then
         build_libs $PLAT
