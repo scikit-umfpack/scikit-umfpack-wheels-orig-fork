@@ -72,8 +72,8 @@ install:
   # Get needed submodules
   - git submodule update --init --recursive
   
-  - cp -Force .\setup.py scikit-umfpack\scikits\umfpack
-  - cp -Force .\site.cfg scikit-umfpack
+  - ps: cp -Force .\setup.py scikit-umfpack\scikits\umfpack
+  - ps: cp -Force .\site.cfg scikit-umfpack
 
   - cmd: echo "Filesystem root:"
   - dir C:\
