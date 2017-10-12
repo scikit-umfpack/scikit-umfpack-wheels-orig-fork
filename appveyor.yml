@@ -156,6 +156,7 @@ build_script:
 before_test:
   # Install test requirements.
   - python -m pip install pytest pytest-xdist pytest-faulthandler pytest-env Pillow mpmath matplotlib
+  - python -m pip install --pre scipy
 
   # Upgrade numpy to the version used for testing
   - python -m pip install "%NUMPY_TEST_DEP%"
