@@ -23,6 +23,11 @@ def configuration(parent_package='',top_path=None):
     build_info = {}
     dict_append(build_info, **umf_info)
     dict_append(build_info, **blas_info)
+    
+    print('Build info:')
+    print(build_info)
+    build_info['libraries'].remove('umfpack')
+    print(build_info)
 
     config.add_extension('__umfpack',
                          sources=[umfpack_i],
