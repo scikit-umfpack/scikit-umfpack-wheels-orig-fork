@@ -88,6 +88,5 @@ function run_tests {
     else
         local testmode="fast"
     fi
-    # Run nose tests
     py.test
 }
