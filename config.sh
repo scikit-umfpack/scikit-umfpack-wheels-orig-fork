@@ -81,12 +81,6 @@ function build_osx_wheel {
 }
 
 function run_tests {
-    # Runs tests on installed distribution from an empty directory
-    # OSX tests seem to time out pretty often
-    if [ -z "$IS_OSX" ]; then
-        local testmode="full"
-    else
-        local testmode="fast"
-    fi
+    cd ../scikit-umfpack
     py.test
 }
