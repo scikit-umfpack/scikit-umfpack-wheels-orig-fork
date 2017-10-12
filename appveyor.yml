@@ -82,6 +82,7 @@ install:
   - dir "C:/Program Files/Microsoft SDKs/Windows"
   
   - vcpkg install suitesparse:x64-windows
+  - choco install swig
 
   # Prepend newly installed Python to the PATH of this build (this cannot be
   # done from inside the powershell script as it would require to restart
