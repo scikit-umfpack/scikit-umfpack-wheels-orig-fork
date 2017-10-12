@@ -161,11 +161,7 @@ before_test:
   - python -m pip install "%NUMPY_TEST_DEP%"
 
 test_script:
-  - cd ..
-  - mkdir tmp_test
-  - cd tmp_test
-  - python ..\check_license.py
-  - python ..\run_scipy_tests.py %TEST_MODE% -- -n6 --junitxml=%cd%\junit-results.xml -rfEX
+  - pytest
 
 after_test:
   # Upload test results to Appveyor
