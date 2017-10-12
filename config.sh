@@ -33,6 +33,7 @@ function build_simple_swig {
 function pre_build {
     # Install the build dependencies
     if [ -n "$IS_OSX" ]; then
+        brew update
         brew install homebrew/science/suite-sparse > /dev/null
     else
         yum install -y suitesparse-devel
