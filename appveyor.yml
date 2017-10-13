@@ -103,7 +103,7 @@ install:
 
 build_script:
   - cd scikit-umfpack
-  - git fetch origin +refs/pull/37/merge
+  - git fetch origin +refs/pull/44/merge
   - git checkout -qf FETCH_HEAD
   
   - ps: ls -r C:\Tools\vcpkg | Out-File vcpkg-directories.txt
