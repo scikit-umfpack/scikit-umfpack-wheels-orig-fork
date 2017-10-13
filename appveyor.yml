@@ -4,7 +4,7 @@ clone_depth: 50
 
 branches:
   only:
-    - master
+    - master 
 
 # No reason for us to restrict the number concurrent jobs
 max_jobs: 100
