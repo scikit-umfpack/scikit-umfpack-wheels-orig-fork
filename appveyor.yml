@@ -9,7 +9,7 @@ branches:
 # No reason for us to restrict the number concurrent jobs
 max_jobs: 100
 
-cache:
+cache: 
   - '%LOCALAPPDATA%\pip\Cache'
   - 'C:\Tools\vcpkg\installed'
   - 'C:\Tools\vcpkg\packages'
