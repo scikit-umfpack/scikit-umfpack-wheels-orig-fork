@@ -151,7 +151,7 @@ build_script:
       # Upload artifact to Appveyor immediately after build
       ls dist -r | Foreach-Object {
           appveyor PushArtifact $_.FullName
-          pip install $_.FullName
+          pip install --pre $_.FullName
       }
 
 before_test:
