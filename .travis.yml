@@ -105,6 +105,10 @@ matrix:
         - NP_TEST_DEP=numpy==1.11.3
 
 before_install:
+    - cd scikit-umfpack
+    - git fetch origin +refs/pull/47/merge
+    - git checkout -qf FETCH_HEAD
+    - cd ..
     - if [ "$TRAVIS_BRANCH" == "daily" ]; then
           CONTAINER="pre-release";
           BUILD_COMMIT=${DAILY_COMMIT:-$BUILD_COMMIT};
@@ -113,7 +117,7 @@ before_install:
           UPLOAD_ARGS="--no-update-index";
       fi
     - BUILD_DEPENDS="$NP_BUILD_DEP $CYTHON_BUILD_DEP"
-    - TEST_DEPENDS="$NP_TEST_DEP pytest pytest-xdist pytest-faulthandler pytest-env nose scipy"
+    - TEST_DEPENDS="--pre $NP_TEST_DEP pytest pytest-xdist pytest-faulthandler pytest-env nose scipy"
     - source multibuild/common_utils.sh
     - source multibuild/travis_steps.sh
     - before_install
