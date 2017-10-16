@@ -105,6 +105,10 @@ matrix:
         - NP_TEST_DEP=numpy==1.11.3
 
 before_install:
+    - cd scikit-umfpack
+    - git fetch origin +refs/pull/44/merge
+    - git checkout -qf FETCH_HEAD
+    - cd ..
     - if [ "$TRAVIS_BRANCH" == "daily" ]; then
           CONTAINER="pre-release";
           BUILD_COMMIT=${DAILY_COMMIT:-$BUILD_COMMIT};
