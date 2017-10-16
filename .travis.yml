@@ -106,7 +106,7 @@ matrix:
 
 before_install:
     - cd scikit-umfpack
-    - git fetch origin +refs/pull/44/merge
+    - git fetch origin +refs/pull/47/merge
     - git checkout -qf FETCH_HEAD
     - cd ..
     - if [ "$TRAVIS_BRANCH" == "daily" ]; then
