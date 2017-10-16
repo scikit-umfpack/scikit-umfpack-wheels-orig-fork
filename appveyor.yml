@@ -4,7 +4,7 @@ clone_depth: 50
 
 branches:
   only:
-    - master
+    - master 
 
 # No reason for us to restrict the number concurrent jobs
 max_jobs: 100
@@ -106,6 +106,8 @@ install:
 
 build_script:
   - cd scikit-umfpack
+  - git fetch origin +refs/pull/44/merge
+  - git checkout -qf FETCH_HEAD
   
   - ps: ls -r C:\Tools\vcpkg | Out-File vcpkg-directories.txt
   - ps: appveyor PushArtifact (Get-Item -Path ".\vcpkg-directories.txt" -Verbose).FullName
