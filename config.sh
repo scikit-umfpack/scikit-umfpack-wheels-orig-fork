@@ -10,6 +10,7 @@ OPENBLAS_VERSION=0.2.18
 source gfortran-install/gfortran_utils.sh
 
 function pre_build {
+    if [ -n "$IS_OSX" ]; then brew update; fi  # Update to get suite-sparse formula
     # Install the build dependencies
     build_swig
     build_suitesparse
