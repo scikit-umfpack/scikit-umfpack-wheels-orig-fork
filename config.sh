@@ -6,7 +6,7 @@ PYTHONFAULTHANDLER=1
 
 function pre_build {
     # Install the build dependencies
-    build_netcdf
+    suppress build_netcdf
 }
 
 function run_tests {
