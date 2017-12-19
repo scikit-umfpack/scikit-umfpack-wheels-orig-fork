@@ -5,8 +5,9 @@
 PYTHONFAULTHANDLER=1
 
 function build_netcdf {
-    build_zlib
-    build_hdf5
+    suppress build_zlib
+    suppress build_hdf5
+    suppress build_curl
     build_simple netcdf 4.5.0 ftp://ftp.unidata.ucar.edu/pub/netcdf
 }
 
