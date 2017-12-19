@@ -7,6 +7,6 @@
 [submodule "gfortran-install"]
 	path = gfortran-install
 	url = https://github.com/MacPython/gfortran-install.git
-[submodule "scikit-umfpack"]
-	path = scikit-umfpack
-	url = https://github.com/scikit-umfpack/scikit-umfpack.git
+[submodule "ScientificPython"]
+	path = ScientificPython
+	url = https://github.com/ScientificPython/ScientificPython.git
