@@ -5,6 +5,7 @@
 PYTHONFAULTHANDLER=1
 
 function build_netcdf {
+    build_zlib
     build_simple netcdf 4.5.0 ftp://ftp.unidata.ucar.edu/pub/netcdf
 }
 
