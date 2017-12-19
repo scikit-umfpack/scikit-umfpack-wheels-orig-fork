@@ -1,6 +1,6 @@
 env:
     global:
-        - REPO_DIR=scikit-umfpack
+        - REPO_DIR=ScientificPython
         # Also see DAILY_COMMIT below
         - BUILD_COMMIT=4f57a98d143da67323058bc94af64f406a12879a
         - PLAT=x86_64
