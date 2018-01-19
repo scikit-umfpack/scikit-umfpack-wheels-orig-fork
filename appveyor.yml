@@ -67,6 +67,8 @@ install:
 build_script:
   - cd scikit-umfpack
   
+  - git apply ../pr_52.patch
+  
   # Copy over additional DLLs to bundle to the wheels
   #
   # The find commands below are mainly to find the paths where the libraries are.
